@@ -1,0 +1,77 @@
+@import '../../../libs/variables';
+
+.wrapper {
+    width: 330px;
+    display: grid;
+    gap: 10px;
+
+}
+.img {
+    justify-self: center;
+}
+.selector {
+    background-color: $gray-color;
+    display: grid;
+    gap: 10px;
+    padding: 5px;
+    border-radius: $main-radius10;
+}
+.active {
+    background-color: $white-color;
+    border-radius: $main-radius10;
+}
+ul {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+}
+
+li {
+    padding: 10px;
+    text-align: center;
+
+}
+.to_cart {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.price {
+    font-weight: 900;
+}
+
+.bye_btn {
+    background-color: $white-color;
+    color: $main-color;
+    font-size: 18px;
+    border-radius: $main-radius20;
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 10px;;
+}
+
+.count {
+    background-color: $main-color;
+    color: $white-color;
+    border-radius: $main-radius20;
+    padding: 0 7px;
+}
+
+.plus {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: 900;
+}
+.title {
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+}

@@ -1,0 +1,139 @@
+@import '../../libs/variables';
+
+
+
+.header {
+    padding: 20px 40px;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $gray-color;
+    border-radius: 6px;
+    span {
+        color: $white-color;
+    }
+}
+.logo {
+    position: relative;
+}
+.logo_img {
+    height: 78px;
+    pointer-events: none;
+}
+.buttons {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+}
+.cart {
+    background-color: $main-color;
+    border-radius: 30px;
+    padding: 5px !important;
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: column;
+    cursor: pointer;
+    .cartLi {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+    }
+}
+.accaunt {
+    border-left: 1px solid $white-color;
+    padding: 2px;
+    img {
+        margin-left: 12px;
+    }
+    
+}
+
+.count {
+    position: relative;
+    right: 29px;
+    top: -21px;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo_img {
+        animation: logo_shake infinite 10s linear;
+        }
+    }
+
+    @keyframes logo_shake {
+        0% {
+            transform: rotate(0deg);
+        }
+        38% {
+            transform: rotate(50deg);
+        }
+        39% {
+            transform:  rotate(51deg);
+        }
+        40% {
+            transform:  rotate(52deg);
+        }
+        41% {
+            transform:  rotate(53deg);
+        }
+        42% {
+            transform:  rotate(54deg);
+        }
+        43% {
+            transform:  rotate(55deg);
+        }
+        44% {
+            transform:  rotate(55deg);
+        }
+        45% {
+            transform:  rotate(55deg);
+        }
+        46% {
+            transform:  rotate(56deg);
+        }
+        47% {
+            transform: rotate(57deg);
+        }
+        48% {
+            transform:   rotate(58deg);
+        }
+        49% {
+            transform:  rotate(59deg);
+        }
+        50% {
+            transform:  rotate(60deg);
+        }
+        51% {
+            transform:  rotate(60deg);
+        }
+        52% {
+            transform: rotate(60deg);
+        }
+        53% {
+            transform:  rotate(60deg);
+        }
+        54% {
+            transform: rotate(60deg);
+        }
+        55% {
+            transform: rotate(60deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+
+// @media (max-width: 525px) {
+//     .header__cart {
+//         gap: 10px;
+//     }
+//     .header > a { 
+//         transform: scale(0.6);
+//     }
+//     .header {
+//         padding: 0 20px;
+//     }
+// }

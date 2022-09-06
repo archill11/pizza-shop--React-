@@ -1,0 +1,40 @@
+@import '../../libs/variables';
+
+
+.custom-select {
+    position: relative;
+    max-width: 400px;
+    text-align: center;
+    background-color: $white-color;
+    z-index: 10;
+    display: grid;
+    gap: 5px;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+#styledSelect1 {
+    border-radius: 0px;
+
+}
+
+.custom-select {
+    select {
+        border: none;
+        outline: none;
+        background: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        text-align: start;
+        margin: 0;
+        display: block;
+        width: 100%;
+        padding: 5px;
+        font-size: 20px;
+        color: $main-color;
+    }
+}
+
+

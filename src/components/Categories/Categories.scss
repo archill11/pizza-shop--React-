@@ -1,0 +1,21 @@
+@import '../../libs/variables';
+
+
+.categories {
+    ul {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+        gap: 15px;
+        li {
+            padding: 15px;
+            background-color: $gray-color;
+            border-radius: 20px;
+        }
+        li.active {
+            background-color: $main-color;
+            color: $white-color;
+        }
+    }
+
+}

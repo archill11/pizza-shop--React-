@@ -1,0 +1,12 @@
+@import '../../libs/variables';
+
+.card_list {
+    background-color: $white-color;
+    padding: 30px;
+    display: grid;
+    grid-auto-flow:row;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    justify-items: center;
+    gap: 75px 30px;
+}
