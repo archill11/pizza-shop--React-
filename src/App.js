@@ -1,7 +1,4 @@
 import {Routes, Route} from "react-router-dom";
-import axios from 'axios';
-import { useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
 
 import { Header } from './components/Header/Header';
 import { Catalog } from "./pages/Catalog";
