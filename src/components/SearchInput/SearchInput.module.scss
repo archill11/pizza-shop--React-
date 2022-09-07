@@ -1,0 +1,53 @@
+@import '../../libs/variables';
+
+.box{
+  position: relative;
+}
+
+.input {
+  padding: 10px;
+  width: 52px;
+  height: 52px;
+  background: none;
+  border: 4px solid $main-color;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-size: 26px;
+  color: $main-color;
+  outline: none;
+  transition: .5s;
+}
+.box:hover input{
+  width: 350px;
+  background: $white-color;
+  border-radius: 10px;
+}
+.box {
+  i {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(-50%,-50%);
+    font-size: 26px;
+    color: #ffd52d;
+    transition: .2s;
+    img {
+      background-color: #fff;
+    }
+  }
+  
+}
+.box:hover i{
+  opacity: 0;
+  z-index: -1;
+}
+
+
+
+
+
+// @media (max-width: 525px) {
+//     .input_search {
+//       width: 150px;
+//     }
+//   }

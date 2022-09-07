@@ -3,6 +3,8 @@ import {Link} from "react-router-dom";
 import cartImg from "../../assets/img/cart.svg" 
 
 
+
+
 import styles from './Header.module.scss'
 
 const Header = (props) => {
