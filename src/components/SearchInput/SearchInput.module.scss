@@ -17,10 +17,16 @@
   outline: none;
   transition: .5s;
 }
-.box:hover input{
-  width: 350px;
-  background: $white-color;
-  border-radius: 10px;
+.box:hover {
+  input {
+    width: 350px;
+    background: $white-color;
+    border-radius: 10px;
+  }
+  .close {
+    opacity: 1;
+  }
+  
 }
 .box {
   i {
@@ -41,6 +47,15 @@
   opacity: 0;
   z-index: -1;
 }
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  opacity: 0;
+}
+
+
 
 
 

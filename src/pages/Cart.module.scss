@@ -1,0 +1,9 @@
+@import '../libs/variables';
+
+.wrapper {
+    background-color: $white-color;
+    padding: 30px;
+    display: grid;
+    justify-items: center;
+}
+

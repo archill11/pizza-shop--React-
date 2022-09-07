@@ -31,8 +31,9 @@
     border-radius: 30px;
     padding: 5px !important;
     display: grid;
-    gap: 20px;
     grid-auto-flow: column;
+    align-items: center;
+    gap: 20px;
     cursor: pointer;
     .cartLi {
         display: grid;
