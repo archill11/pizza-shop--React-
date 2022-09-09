@@ -1,0 +1,27 @@
+@import '../../libs/variables';
+
+.wrapper {
+    background-color: #fff;
+    width: 100%;
+    padding: 30px;
+    display: grid;
+    justify-items: center;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 20px;
+}
+.btn{
+    background-color: $white-color;
+    padding: 15px;
+    border: none;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-auto-flow: column;
+    gap: 5px;
+    span {
+        font-weight: 600;
+        font-size: 15px;
+    }
+}

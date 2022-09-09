@@ -1,8 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../../../redux/cartSlice";
+import { addItem, selectCartContent } from "../../../redux/cartSlice";
 import { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
+import { TypeSelector } from "../../TypeSelector/TypeSelector";
+import { SizeSelector } from "../../SizeSelector/SizeSelector";
 
 import styles from './Card.module.scss'
+import { ButtonAdd } from "../../ButtonAdd/ButtonAdd";
 
 const Card = (props) => {
     
@@ -10,54 +14,24 @@ const Card = (props) => {
     const [size, setSize] = useState(0)
     const dispatch = useDispatch()
     const types = ["тонкое", "традиционное"]
-    const cart = useSelector(state => state.cart)
-
-    const count = cart.reduce((sum, curr) => (
-        curr.id === props.id 
-        ? curr.count + sum
-        : sum + 0
-    ), 0)
-
-    const addToCart = () => {
-        const newItem = {
-            id: props.id,
-            imageUrl: props.imageUrl,
-            price: props.price,
-            title: props.title,
-            size: props.sizes[size],
-            type: types[activeType],
-        }
-        dispatch(addItem(newItem))
-    }
+    const cart = useSelector(selectCartContent)
 
 
     return(
         <div className={styles.wrapper}>
-            <div className={styles.img}>
-                <img src={props.imageUrl} height={300} alt="pizza"></img>
-            </div>
-            <span className={styles.title}>{props.title}</span>
+            <Link className={styles.link} to={`item/${props.id}`}>
+                <div className={styles.img}>
+                    <img src={props.imageUrl} height={300} alt="pizza"></img>
+                </div>
+                <span className={styles.title}>{props.title}</span>
+            </Link>
             <div className={styles.selector}>
-                <ul className='cp'>
-                    {props.types.map((item, indx) => (
-                            <li onClick={()=> setActiveType(indx)} className={activeType === indx ? styles.active : ''} key={indx}>{types[item]} </li>
-                        ))}
-
-                </ul>
-                <ul className='cp'>
-                    {props.sizes.map((item, indx) => (
-                            <li onClick={()=>setSize(indx)} className={size === indx ? styles.active : ''} key={indx}>{item} см.</li> 
-                         ))}
-                </ul>
+                {props.types && <TypeSelector setActiveType={setActiveType} activeType={activeType} itemTipes={props.types}/>}
+                <SizeSelector id={props.id} setSize={setSize} size={size} itemSizes={props.sizes}/>
             </div>
             <div className={styles.to_cart}>
-                <span className={styles.price}>от {props.price} ₽</span>
-                <button onClick={addToCart} className={styles.bye_btn + ' cp'}>
-                    <span className={styles.plus}>+</span>
-                    <span>Добавить</span>
-                    {count ? <span className={styles.count}>{count}</span> : null}
-                    
-                </button>
+                <span className={styles.price}>{props.price[size]} ₽</span>
+                <ButtonAdd id={props.id} activeType={activeType} size={size} cart={cart}/>
             </div>
         </div>
     )

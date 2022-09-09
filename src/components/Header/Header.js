@@ -2,12 +2,13 @@ import { LogoSvg } from '../LogoSvg/LogoSvg';
 import {Link} from "react-router-dom";
 import { useSelector } from 'react-redux';
 import cartImg from "../../assets/img/cart.svg" 
+import { selectCartContent } from '../../redux/cartSlice';
 
 import styles from './Header.module.scss'
 
 const Header = (props) => {
     
-    const cart = useSelector(state => state.cart)
+    const cart = useSelector(selectCartContent)
     const totalAmount = cart.reduce((sum, curr) => curr.price * curr.count + sum, 0)
 
     return(
@@ -24,7 +25,7 @@ const Header = (props) => {
                         <span className="cart__total">{totalAmount} ₽</span>
                     </li>
                     <li className={styles.accaunt}>
-                        <img src={cartImg} height={50} alt="cart"></img>
+                        <img src={cartImg} height={40} alt="cart"></img>
                         <span className={styles.count}>{cart.length}</span>
                     </li>
                 </ul>

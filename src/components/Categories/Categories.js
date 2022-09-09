@@ -6,7 +6,7 @@ import { setCategoryVal } from '../../redux/categorySlice'
 import './Categories.scss'
 
 
-const data = ["Все", "Мясные", "Вегетарианские", "Гриль", "Острые", "Закрытые", ]
+const data = ["Все", "Мясные", "Вегетарианские", "Гриль", "Острые", "Закрытые", "Напитки" ]
 
 
 const Categories = (props) => {

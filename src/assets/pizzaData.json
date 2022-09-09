@@ -1,166 +1,322 @@
-
 [
-    {
-      "id": 0,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "title": "Пепперони Фреш с перцем",
-      "types": [
-        0,
-        1
-      ],
-      "sizes": [
-        26,
-        30,
-        40
-      ],
-      "price": 803,
-      "category": 4,
-      "rating": 4
-    },
-    {
-      "id": 1,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
-      "title": "Сырная",
-      "types": [
-        0
-      ],
-      "sizes": [
-        26,
-        40
-      ],
-      "price": 245,
-      "category": 0,
-      "rating": 6
-    },
-    {
-      "id": 2,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
-      "title": "Цыпленок барбекю",
-      "types": [
-        0
-      ],
-      "sizes": [
-        26,
-        40
-      ],
-      "price": 295,
-      "category": 1,
-      "rating": 4
-    },
-    {
-      "id": 3,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
-      "title": "Кисло-сладкий цыпленок",
-      "types": [
-        1
-      ],
-      "sizes": [
-        26,
-        30,
-        40
-      ],
-      "price": 275,
-      "category": 4,
-      "rating": 2
-    },
-    {
-      "id": 4,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
-      "title": "Чизбургер-пицца",
-      "types": [
-        0,
-        1
-      ],
-      "sizes": [
-        26,
-        30,
-        40
-      ],
-      "price": 415,
-      "category": 3,
-      "rating": 8
-    },
-    {
-      "id": 5,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
-      "title": "Крэйзи пепперони",
-      "types": [
-        0
-      ],
-      "sizes": [
-        30,
-        40
-      ],
-      "price": 580,
-      "category": 4,
-      "rating": 2
-    },
-    {
-      "id": 6,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
-      "title": "Пепперони",
-      "types": [
-        0,
-        1
-      ],
-      "sizes": [
-        26,
-        30,
-        40
-      ],
-      "price": 675,
-      "category": 1,
-      "rating": 9
-    },
-    {
-      "id": 7,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
-      "title": "Маргарита",
-      "types": [
-        0,
-        1
-      ],
-      "sizes": [
-        26,
-        30,
-        40
-      ],
-      "price": 450,
-      "category": 0,
-      "rating": 10
-    },
-    {
-      "id": 8,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/ec29465e-606b-4a04-a03e-da3940d37e0e.jpg",
-      "title": "Четыре сезона",
-      "types": [
-        0,
-        1
-      ],
-      "sizes": [
-        26,
-        30,
-        40
-      ],
-      "price": 395,
-      "category": 5,
-      "rating": 10
-    },
-    {
-      "id": 9,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/30367198-f3bd-44ed-9314-6f717960da07.jpg",
-      "title": "Овощи и грибы 🌱",
-      "types": [
-        0,
-        1
-      ],
-      "sizes": [
-        26,
-        30,
-        40
-      ],
-      "price": 285,
-      "category": 2,
-      "rating": 7
-    }
-  ]
+  {
+   "id": "0",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
+   "title": "Пепперони Фреш с перцем",
+   "compound": "моцареллы, томатный соус",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [
+    803,
+    877,
+    905
+   ],
+   "category": 4,
+   "rating": 4
+  },
+  {
+   "id": "1",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+   "title": "Сырная",
+   "compound": "моцареллы, томатный соус",
+   "types": [
+    0
+   ],
+   "sizes": [
+    26,
+    40
+   ],
+   "price": [245, 305],
+   "category": 0,
+   "rating": 6
+  },
+  {
+   "id": "2",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
+   "title": "Цыпленок барбекю",
+   "compound": "Цыпленок, бекон, соус барбекю, красный лук, моцарелла, томатный соус",
+   "types": [
+    0
+   ],
+   "sizes": [
+    26,
+    40
+   ],
+   "price": [295, 360],
+   "category": 1,
+   "rating": 4
+  },
+  {
+   "id": "3",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
+   "title": "Кисло-сладкий цыпленок",
+   "compound": "моцареллы, томатный соус",
+   "types": [
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [275, 310, 340],
+   "category": 4,
+   "rating": 2
+  },
+  {
+   "id": "4",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+   "title": "Чизбургер-пицца",
+   "compound": "Мясной соус болоньезе, соус бургер, маринованные огурчики, томаты, красный лук, моцарелла",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [415, 450, 490],
+   "category": 3,
+   "rating": 8
+  },
+  {
+   "id": "5",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
+   "title": "Крэйзи пепперони",
+   "compound": "моцареллы, томатный соус",
+   "types": [
+    0
+   ],
+   "sizes": [
+    30,
+    40
+   ],
+   "price": [580, 640],
+   "category": 4,
+   "rating": 2
+  },
+  {
+   "id": "6",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
+   "title": "Пепперони",
+   "compound": "моцареллы, томатный соус",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [675, 730, 800],
+   "category": 1,
+   "rating": 9
+  },
+  {
+   "id": "7",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+   "title": "Маргарита",
+   "compound": "моцареллы, томатный соус",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [450, 500, 530],
+   "category": 0,
+   "rating": 10
+  },
+  {
+   "id": "8",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/ec29465e-606b-4a04-a03e-da3940d37e0e.jpg",
+   "title": "Четыре сезона",
+   "compound": "Увеличенная порция моцареллы, ветчина, пикантная пепперони, кубики брынзы, томаты, шампиньоны, итальянские травы, томатный соус",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [395, 430, 493],
+   "category": 5,
+   "rating": 10
+  },
+  {
+   "id": "9",
+   "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/30367198-f3bd-44ed-9314-6f717960da07.jpg",
+   "title": "Овощи и грибы 🌱",
+   "compound": "моцареллы, томатный соус",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [285, 310, 365],
+   "category": 2,
+   "rating": 7
+  },
+  {
+   "id": "10",
+   "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/2ac448e39ba24623a33c1d8d50b69ef8_138x138.jpeg",
+   "title": "Диабло",
+   "compound": "Острая чоризо, острый перец халапеньо, соус барбекю, митболы, томаты, сладкий перец, красный лук, моцарелла, томатный соус",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [700, 750, 811],
+   "category": 4,
+   "rating": 7
+  },
+  {
+   "id": "11",
+   "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/af39a1a069eb48e58156bd48b925436e_292x292.jpeg",
+   "title": "Овощи гриль",
+   "compound": "Овощи гриль, томаты, красный лук, моцарелла, соус песто, томатный соус, чеснок",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [489, 520, 588],
+   "category": 2,
+   "rating": 7
+  },
+  {
+   "id": "12",
+   "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/17f215303faf4fbc86941e27debee436_292x292.jpeg",
+   "title": "Двойная пепперони",
+   "compound": "Двойная порция пикантной пепперони, увеличенная порция моцареллы, томатный соус",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [489, 530, 603],
+   "category": 2,
+   "rating": 7
+  },
+  {
+   "id": "13",
+   "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/5630c6ed3f394c7ba25e1ef79a67b7ee_292x292.jpeg",
+   "title": "Ветчина и сыр",
+   "compound": "Ветчина, моцарелла, соус альфредо",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [329, 400, 423],
+   "category": 2,
+   "rating": 7
+  },
+  {
+   "id": "14",
+   "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/f440c85c436a4284afad6ecfc43c1fab_292x292.jpeg",
+   "title": "Чоризо фреш",
+   "compound": "Томатный соус, моцарелла, острая чоризо, сладкий перец",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [299, 360, 450],
+   "category": 2,
+   "rating": 7
+  },
+  {
+   "id": "15",
+   "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/b473722281944c78ae1d6532576f92fa_292x292.jpeg",
+   "title": "Домашняя",
+   "compound": "Пикантная пепперони, ветчина, маринованные огурчики, томаты, моцарелла, томатный соус",
+   "types": [
+    0,
+    1
+   ],
+   "sizes": [
+    26,
+    30,
+    40
+   ],
+   "price": [439, 500, 570],
+   "category": 2,
+   "rating": 7
+  },
+  {
+   "id": "16",
+   "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/5a945ed86ef943ac9583c4a6413d9ad0_292x292.jpeg",
+   "title": "Coca-Cola",
+   "sizes": [
+    0.5,
+    1
+   ],
+   "price": [105, 200],
+   "category": 5,
+   "rating": 7
+  },
+  {
+   "id": "17",
+   "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/17cc3b8eb0444c539b76ae06eb072d8d_292x292.png",
+   "title": "Sprite Lemon Mint Zero",
+   "sizes": [
+    0.5,
+    0.3
+   ],
+   "price": [105, 70],
+   "category": 5,
+   "rating": 7
+  },
+  {
+   "id": "18",
+   "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/8a299824e6fa4fbfaf1ef66c24721603_292x292.jpeg",
+   "title": "Schweppes bitter lemon",
+   "sizes": [
+    0.33
+   ],
+   "price": [65],
+   "category": 5,
+   "rating": 7
+  }
+ ]

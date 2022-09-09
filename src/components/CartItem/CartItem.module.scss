@@ -6,12 +6,45 @@
     grid-auto-flow: column;
     align-items: center;
     justify-content: space-between;
+    justify-items: center;
     width: 800px;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .info {
     width: 350px;
     display: grid;
+}
+
+.count {
+    font-size: 19px;
+    font-weight: 700;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    &_btn {
+        border: 1px solid $main-color;
+        border-radius: 100%;
+        display: grid;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.price {
+    justify-self: center;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 19px;
+    font-weight: 600;
+}
+.sub_title {
+    color: $gray-sub-title;
 }

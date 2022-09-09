@@ -1,29 +1,26 @@
-@import '../../../libs/variables';
+@import '../../libs/variables';
 
-.wrapper {
-    width: 330px;
+.order {
+    width: 500px;
     display: grid;
-    gap: 10px;
+    text-align: center;
+    grid-auto-rows: min-content;
+    gap: 20px;
 }
-.link {
-    width: 330px;
+
+.info {
+    width: 400px;
     display: grid;
-    justify-content: center;
     justify-items: center;
-    gap: 10px;
 }
-.img {
-    display: grid;
-    justify-self: center;
-    width: 100%;
-    justify-content: center;
-}
+
 .selector {
     background-color: $gray-color;
     display: grid;
     gap: 10px;
     padding: 5px;
     border-radius: $main-radius10;
+    height: 110px;
 }
 .active {
     background-color: $white-color;
@@ -38,6 +35,7 @@ ul {
 li {
     padding: 10px;
     text-align: center;
+    height: 40px;
 
 }
 .to_cart {
@@ -49,6 +47,7 @@ li {
 
 .price {
     font-weight: 900;
+    font-size: 20px;
 }
 
 .bye_btn {
@@ -75,12 +74,20 @@ li {
     font-weight: 900;
 }
 
-.price {
-    font-size: 25px;
-    font-weight: 900;
+
+
+
+
+.order {
+    display: grid;
 }
+
 .title {
-    font-size: 25px;
-    font-weight: 900;
+    font-size: 22px;
+    font-weight: 800
+}
+.compound {
+    font-size: 17px;
+    font-weight: 600;
     text-align: center;
 }

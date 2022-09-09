@@ -1,0 +1,17 @@
+@import '../../libs/variables';
+
+.active {
+    background-color: $white-color;
+    border-radius: $main-radius10;
+}
+ul {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+}
+
+li {
+    padding: 10px;
+    text-align: center;
+
+}

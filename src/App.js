@@ -4,8 +4,10 @@ import { Header } from './components/Header/Header';
 import { Catalog } from "./pages/Catalog";
 import { Cart } from "./pages/Cart";
 import { NotFound } from "./pages/NotFound";
+import { Item } from "./pages/Item";
 
 import styles from './App.module.scss';
+
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/" element={ <Catalog /> }/>
 
         <Route path="cart" element={ <Cart/> }/>
+        
+        <Route path="item/:id" element={ <Item/> }/>
         
         <Route path="*" element={ <NotFound/> }/>
       </Routes>                

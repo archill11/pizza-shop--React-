@@ -1,12 +1,25 @@
 import React from "react"
-
 import { useDispatch, useSelector } from "react-redux"
+import deleteBtn from '../../assets/img/close_delete.svg'
+import { delItem, incItem, decItem } from "../../redux/cartSlice"
 
 import styles from './CartItem.module.scss'
 
 
 
 const CartItem = (props) => {
+    const dispatch = useDispatch()
+
+    const remFromCart = () => {
+        dispatch(delItem(props.indx))
+    }
+    const incCartItem = () => {
+        dispatch(incItem(props.indx))
+    }
+    const decCartItem = () => {
+        dispatch(decItem(props.indx))
+    }
+
 
    return(
         <div className={styles.item}>
@@ -15,16 +28,18 @@ const CartItem = (props) => {
             </div>
             <div className={styles.info}>
                 <span className={styles.title}>{props.title}</span>
-                <span className={styles.sub_title}>{props.type}, {props.size} см</span>
+                <span className={styles.sub_title}>{props.type}, {props.size} {props.id > 15 ? "л" : "см."}</span>
             </div>
             <div className={styles.count}>
+                <span  onClick={incCartItem } className={styles.count_btn + " cp"}>+</span>
                 {props.count}
+                <span onClick={decCartItem } className={styles.count_btn + " cp"}>-</span>
             </div>
             <div className={styles.price}>
-                {props.price * props.count}
+                {props.price * props.count} ₽
             </div>
-            <div className={styles.delBtn}>
-                <span>X</span>
+            <div onClick={ remFromCart } className={styles.delBtn + " cp"}>
+                <img src={deleteBtn} height={30} alt="pizza"></img>
             </div>
         </div>
    )
