@@ -1,10 +1,12 @@
 import React from "react"
 import styled from 'styled-components'
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { CartItem } from "../components/CartItem/CartItem"
 import { CartHeader } from "../components/CartHeader/CartHeader" 
 import { CartFooter } from "../components/CartFooter/CartFooter" 
-import { cartItem, dropCart, selectCartContent } from "../redux/cartSlice"
+import { selectCartContent } from "../redux/cart/selectors"
+import { cartItem } from "../redux/cart/types"
+
 
 const Wrapper = styled.div`
 background-color: #fff;

@@ -2,14 +2,26 @@ import { LogoSvg } from '../LogoSvg/LogoSvg';
 import {Link} from "react-router-dom";
 import { useSelector } from 'react-redux';
 import cartImg from "../../assets/img/cart.svg" 
-import { selectCartContent } from '../../redux/cartSlice';
+
 
 import styles from './Header.module.scss'
+import { useEffect, useRef } from 'react';
+import { selectCartContent } from '../../redux/cart/selectors';
 
 const Header: React.FC = (props: any) => {
     
+    const firstRender = useRef(true)
     const cart = useSelector(selectCartContent)
     const totalAmount = cart.reduce((sum: number, curr: {price: number, count: number}) => curr.price * curr.count + sum, 0)
+
+    useEffect(() => {
+        if (!firstRender.current) {
+            const json = JSON.stringify(cart)
+            localStorage.setItem('cart', json)
+        }
+        
+        firstRender.current = false
+    }, [cart])
 
     return(
         <header className={styles.header}>
@@ -35,4 +47,4 @@ const Header: React.FC = (props: any) => {
     )
 }
 
-export {Header}
+export {Header} 

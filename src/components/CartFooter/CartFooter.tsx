@@ -1,6 +1,4 @@
 import React from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { dropCart } from "../../redux/cartSlice"
 
 import styles from "./CartFooter.module.scss"
 

@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
-import { addItem, selectCartContent } from "../../redux/cartSlice"
+import { selectCartContent } from "../../redux/cart/selectors"
 import { ButtonAddToCart } from "../ButtonAddToCart/ButtonAddToCart"
 
 import { SizeSelector } from "../SizeSelector/SizeSelector"

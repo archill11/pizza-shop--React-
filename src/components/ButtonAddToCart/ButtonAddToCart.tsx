@@ -1,6 +1,7 @@
 
 import { useDispatch, useSelector } from 'react-redux'
-import { actionItem, addItem, cartItem } from '../../redux/cartSlice'
+import { addItem} from '../../redux/cart/slice'
+import { actionItem, cartItem } from '../../redux/cart/types'
 import { RootState } from '../../redux/store'
 import { toCartItem } from '../DetailedInfo/DetailedInfo'
 import styles from './ButtonAddToCart.module.scss'

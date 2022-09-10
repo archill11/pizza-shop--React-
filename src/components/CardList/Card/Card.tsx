@@ -1,12 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import { addItem, selectCartContent } from "../../../redux/cartSlice";
-import { useEffect, useState } from 'react'
+import { useSelector } from "react-redux";
+import { useState } from 'react'
 import { Link } from "react-router-dom";
 import { TypeSelector } from "../../TypeSelector/TypeSelector";
 import { SizeSelector } from "../../SizeSelector/SizeSelector";
 import { ButtonAddToCart } from "../../ButtonAddToCart/ButtonAddToCart";
 
 import styles from './Card.module.scss'
+import { selectCartContent } from "../../../redux/cart/selectors";
 
 type CardProps = {
     id: string,

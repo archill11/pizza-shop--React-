@@ -1,7 +1,7 @@
 import React from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import deleteBtn from '../../assets/img/close_delete.svg'
-import { delItem, incItem, decItem } from "../../redux/cartSlice"
+import { delItem, incItem, decItem } from "../../redux/cart/slice"
 
 import styles from './CartItem.module.scss'
 

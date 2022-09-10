@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import filtertReducer from './categorySlice'
-import cartReducer from './cartSlice'
-import productsReducer from './productsSlice'
+import filtertReducer from './category/slice'
+import cartReducer from './cart/slice'
+import productsReducer from './products/slice'
 
 export const store = configureStore({
   reducer: {

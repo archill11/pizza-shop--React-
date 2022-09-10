@@ -1,10 +1,9 @@
 
 import { useDispatch } from "react-redux";
 import React from 'react'
-import { setCategoryVal } from '../../redux/categorySlice' 
+import { setCategoryVal } from "../../redux/category/slice";
 
 import './Categories.scss'
-
 
 const data: string[] = ["Все", "Мясные", "Вегетарианские", "Гриль", "Острые", "Закрытые", "Напитки" ]
 

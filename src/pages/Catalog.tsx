@@ -7,9 +7,10 @@ import { CardList } from "../components/CardList/CardList"
 import { Categories } from "../components/Categories/Categories"
 import { SortingSelect } from "../components/SortingSelect/SortingSelect"
 import { SearchInput } from "../components/SearchInput/SearchInput"
-import { filterSliceState, setQueryParams } from "../redux/categorySlice";
-import { fethProducts } from "../redux/productsSlice";
 import { AppDispatch, RootState } from "../redux/store";
+import { setQueryParams } from "../redux/category/slice";
+import { filterSliceState } from "../redux/category/types";
+import { fethProducts } from "../redux/products/asyncActions";
 
 const SortingBlock = styled.div`
 display: grid;
@@ -20,7 +21,7 @@ padding: 30px;`
 
 
 const Catalog: React.FC = () => {
-  
+  const [limit, setLimit] = useState(6)
   const [searchVal, searchByVal] = useState('')
   const { category, sortProperty } = useSelector((state: RootState) => state.filter)
   const dispatch = useDispatch<AppDispatch>()
@@ -29,14 +30,35 @@ const Catalog: React.FC = () => {
   const firstRender = useRef(true)
 
 
+
   const fetchData = () => {
-   
+  
+    const l: string = String(limit)
     const c: string | '' = category === 0 ? '' : `category=${category}`
     const s: string | '' = sortProperty ? `&sortBy=${sortProperty}` : ''     
-    dispatch(fethProducts([c, s]))
+    dispatch(fethProducts([l, c, s]))
  
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
   }
+
+  
+  const scrollHandler = (event: Event)=> {
+    // console.log(e);
+    const targetDiv: HTMLDocument = event.target as HTMLDocument
+    if (targetDiv.documentElement.scrollHeight - (targetDiv.documentElement.scrollTop + window.innerHeight) < 5 && limit < 20 ) {
+      setLimit(limit + 6 )
+    }
+    // console.log('muuuuv', e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100 );
+    
+  }
+
+  useEffect(() => {
+    const win: Window = window; 
+    win.addEventListener('scroll', scrollHandler,)
+    return function() {
+      win.removeEventListener('scroll', scrollHandler)
+    }
+  }, [limit])
 
   useEffect(() => {
     if (!firstRender.current) {
@@ -59,11 +81,11 @@ const Catalog: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    if ( !windowLocationSearch.current ) {
+    if ( !windowLocationSearch.current || !firstRender.current ) {      
       fetchData()
     }
     windowLocationSearch.current = false
-  }, [category, sortProperty])
+  }, [category, sortProperty, limit])
 
 
 
@@ -71,7 +93,7 @@ const Catalog: React.FC = () => {
     <>
       <SortingBlock>
         <Categories categoryVal={category} />
-        <SearchInput placeholder={'Поиск пиццы'} searchVal={searchVal} searchByVal={searchByVal}/>
+        <SearchInput placeholder={'Поиск...'} searchVal={searchVal} searchByVal={searchByVal}/>
         <SortingSelect sortingVal={sortProperty}/>
       </SortingBlock>
       <CardList searchVal={searchVal} />

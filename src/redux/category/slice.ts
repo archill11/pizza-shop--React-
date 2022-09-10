@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { filterSliceState } from "./types";
 
 
 
-export interface filterSliceState { category : number , sortProperty: 'rating&order=desc' | "price" | "price&order=desc" | string } 
+
 
 const initialState: filterSliceState = { category: 0, sortProperty: 'rating&order=desc' }
 

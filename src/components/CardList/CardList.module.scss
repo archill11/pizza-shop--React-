@@ -3,6 +3,7 @@
 .card_list {
     background-color: $white-color;
     padding: 30px;
+    padding-bottom: 150px;
     display: grid;
     grid-auto-flow:row;
     grid-template-columns: repeat(3, 1fr);
