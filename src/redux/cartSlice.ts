@@ -31,7 +31,8 @@ const cartSlice = createSlice({
             const obj: actionItem = action.payload
             const double: cartItem | undefined = state.find(item => item.id === obj.id && item.size === obj.size && item.type === obj.type)
             const doubleIndx: number | undefined = double && state.indexOf(double)
-            if ( double && doubleIndx && state && state.length > 0 ) {
+            
+           if ( double && doubleIndx !== undefined  ) {
                 state[doubleIndx]["count"] += 1
             }else{
                 state.push({count: 1, ...obj}) 
