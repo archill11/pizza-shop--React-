@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import { Item } from "../../redux/productsSlice"
+import { Item } from "../../redux/products/types"
 import { RootState } from "../../redux/store"
 import { Sceleton } from "../Sceleton/Sceleton"
 import { Card } from "./Card/Card"

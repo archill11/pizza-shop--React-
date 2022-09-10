@@ -1,0 +1,1 @@
+export interface filterSliceState { category : number , sortProperty: 'rating&order=desc' | "price" | "price&order=desc" | string } 

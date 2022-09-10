@@ -1,7 +1,7 @@
 import React from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { dropCart } from "../../redux/cartSlice"
+import { useDispatch } from "react-redux"
 import drop from "../../assets/img/garbage.svg"
+import { dropCart } from "../../redux/cart/slice"
 
 import styles from "./CartHeader.module.scss"
 

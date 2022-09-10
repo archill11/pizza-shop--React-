@@ -1,8 +1,8 @@
 import sort from '../../assets/img/sort-ascending.svg'
 import { useDispatch } from "react-redux";
-import { setSortingVal } from '../../redux/categorySlice';
 
 import './SortingSelect.scss'
+import { setSortingVal } from '../../redux/category/slice';
 
 type SortingSelectProps = {sortingVal: string}
 
