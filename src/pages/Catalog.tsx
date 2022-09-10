@@ -43,12 +43,10 @@ const Catalog: React.FC = () => {
 
   
   const scrollHandler = (event: Event)=> {
-    // console.log(e);
     const targetDiv: HTMLDocument = event.target as HTMLDocument
-    if (targetDiv.documentElement.scrollHeight - (targetDiv.documentElement.scrollTop + window.innerHeight) < 5 && limit < 20 ) {
-      setLimit(limit + 6 )
+    if (targetDiv.documentElement.scrollHeight - (targetDiv.documentElement.scrollTop + window.innerHeight) < 2 && limit < 20 ) {
+      setLimit(limit => limit + 6 )
     }
-    // console.log('muuuuv', e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100 );
     
   }
 
