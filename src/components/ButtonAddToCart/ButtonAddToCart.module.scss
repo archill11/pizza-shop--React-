@@ -5,6 +5,7 @@
     color: $main-color;
     font-size: 18px;
     border-radius: $main-radius20;
+    border: 1px solid $main-color;
     display: inline-grid;
     grid-auto-flow: column;
     align-items: center;

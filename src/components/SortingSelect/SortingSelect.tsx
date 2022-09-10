@@ -4,7 +4,9 @@ import { setSortingVal } from '../../redux/categorySlice';
 
 import './SortingSelect.scss'
 
-const SortingSelect = (props) => {
+type SortingSelectProps = {sortingVal: string}
+
+const SortingSelect: React.FC<SortingSelectProps> = (props) => {
 
     const dispatch = useDispatch()
 

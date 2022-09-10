@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { CartItem } from "../components/CartItem/CartItem"
 import { CartHeader } from "../components/CartHeader/CartHeader" 
 import { CartFooter } from "../components/CartFooter/CartFooter" 
-import { dropCart, selectCartContent } from "../redux/cartSlice"
+import { cartItem, dropCart, selectCartContent } from "../redux/cartSlice"
 
 const Wrapper = styled.div`
 background-color: #fff;
@@ -18,13 +18,12 @@ margin: 0 auto;`
 
 
 
-const Cart = (props) => {
-   const dispatch = useDispatch()
+const Cart: React.FC = () => {
    const cart = useSelector(selectCartContent)
-   const totCount = cart.reduce((cum, curr) => curr.count + cum, 0)
+   const totCount = cart.reduce((cum: number, curr: {count: number}) => curr.count + cum, 0)
 
-   const cartList = cart.map((item, indx) => (
-         <CartItem {...item} indx={indx} key={item.id + item.type + item.size}/>
+   const cartList = cart.map((item: cartItem, indx: number) => (
+         <CartItem {...item} indx={indx} key={item.id + item.type + String(item.size)}/>
       ))
 
    return(

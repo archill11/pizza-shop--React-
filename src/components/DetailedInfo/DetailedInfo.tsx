@@ -1,24 +1,31 @@
 import axios from "axios"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { addItem, selectCartContent } from "../../redux/cartSlice"
-import { ButtonAdd } from "../ButtonAdd/ButtonAdd"
+import { ButtonAddToCart } from "../ButtonAddToCart/ButtonAddToCart"
+
 import { SizeSelector } from "../SizeSelector/SizeSelector"
 import { TypeSelector } from "../TypeSelector/TypeSelector"
 
 
-
 import styles from './DetailedInfo.module.scss'
 
+export type toCartItem = {
+    imageUrl: string
+    title: string
+    price: string
+    compound: string
+    id: string
+    types: number[]
+    sizes: number[]
+}
 
-
-const DetailedInfo = (props) => {
+const DetailedInfo: React.FC = () => {
     const [activeType, setActiveType] = useState(0)
     const [size, setSize] = useState(0)
-    const [item, setItem] = useState()
+    const [item, setItem] = useState<toCartItem>()
     const {id} = useParams()
-    const dispatch = useDispatch()
     const cart = useSelector(selectCartContent)
    
     useEffect(()=> {
@@ -50,7 +57,10 @@ const DetailedInfo = (props) => {
                 </div>
                 <div className={styles.to_cart}>
                     <span className={styles.price}>{item.price[size]} ₽</span>
-                    <ButtonAdd id={item.id} item={item} activeType={activeType} size={size} cart={cart}/>
+                    <ButtonAddToCart id={item.id} item={item} activeType={activeType} size={size} 
+                    cart={cart }
+                    
+                    />
                 </div>
             </div>
         </>

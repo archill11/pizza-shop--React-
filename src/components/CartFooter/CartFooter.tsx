@@ -4,9 +4,9 @@ import { dropCart } from "../../redux/cartSlice"
 
 import styles from "./CartFooter.module.scss"
 
+type CartFooterProps = {totCount: number}
 
-const CartFooter = (props) => {
-   const dispatch = useDispatch()
+const CartFooter: React.FC<CartFooterProps> = (props) => {
    
    return(
     <div className={styles.wrapper}>

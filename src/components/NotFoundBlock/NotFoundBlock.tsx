@@ -3,7 +3,7 @@ import React from "react"
 
 import styles from './NotFoundBlock.module.scss'
 
-const NotFoundBlock = (props) => (
+const NotFoundBlock: React.FC = () => (
     <div className={styles.root}>
         <h1>
             😕<br/>

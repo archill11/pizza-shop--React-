@@ -6,10 +6,10 @@ import { selectCartContent } from '../../redux/cartSlice';
 
 import styles from './Header.module.scss'
 
-const Header = (props) => {
+const Header: React.FC = (props: any) => {
     
     const cart = useSelector(selectCartContent)
-    const totalAmount = cart.reduce((sum, curr) => curr.price * curr.count + sum, 0)
+    const totalAmount = cart.reduce((sum: number, curr: {price: number, count: number}) => curr.price * curr.count + sum, 0)
 
     return(
         <header className={styles.header}>

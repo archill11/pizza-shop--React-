@@ -1,7 +1,4 @@
 
-import { useEffect, useRef, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
 import styled from 'styled-components'
 import { DetailedInfo } from "../components/DetailedInfo/DetailedInfo"
 
@@ -14,7 +11,7 @@ gap: 50px`
 
 
 
-const Item = (props) => {
+const Item = () => {
     return(
         <ItemWrapper>
             <DetailedInfo/>

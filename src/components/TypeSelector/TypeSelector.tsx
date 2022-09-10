@@ -2,9 +2,10 @@
 import styles from './TypeSelector.module.scss'
 
 
+type TypeSelectorProps = {activeType: number, itemTipes: number[], setActiveType: (i: number) => void}
 
-const TypeSelector = (props) => {
-    const types = ["тонкое", "традиционное"]
+const TypeSelector: React.FC<TypeSelectorProps> = (props) => {
+    const types: string[] = ["тонкое", "традиционное"]
 
     return(
         <ul className='cp'>

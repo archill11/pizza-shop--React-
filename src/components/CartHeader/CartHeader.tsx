@@ -6,7 +6,7 @@ import drop from "../../assets/img/garbage.svg"
 import styles from "./CartHeader.module.scss"
 
 
-const CartHeader = (props) => {
+const CartHeader: React.FC = () => {
    const dispatch = useDispatch()
    
    return(

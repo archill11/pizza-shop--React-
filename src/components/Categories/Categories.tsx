@@ -1,15 +1,16 @@
 
 import { useDispatch } from "react-redux";
-import { useState, useEffect } from 'react'
+import React from 'react'
 import { setCategoryVal } from '../../redux/categorySlice' 
 
 import './Categories.scss'
 
 
-const data = ["Все", "Мясные", "Вегетарианские", "Гриль", "Острые", "Закрытые", "Напитки" ]
+const data: string[] = ["Все", "Мясные", "Вегетарианские", "Гриль", "Острые", "Закрытые", "Напитки" ]
 
+type CategoriesProps = {categoryVal: number}
 
-const Categories = (props) => {
+const Categories: React.FC<CategoriesProps> = (props) => {
     const dispatch = useDispatch()
 
     return(

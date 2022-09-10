@@ -4,16 +4,23 @@ import { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { TypeSelector } from "../../TypeSelector/TypeSelector";
 import { SizeSelector } from "../../SizeSelector/SizeSelector";
+import { ButtonAddToCart } from "../../ButtonAddToCart/ButtonAddToCart";
 
 import styles from './Card.module.scss'
-import { ButtonAdd } from "../../ButtonAdd/ButtonAdd";
 
-const Card = (props) => {
+type CardProps = {
+    id: string,
+    title: string,
+    price: number[],
+    imageUrl: string
+    types: number[]
+    sizes: number[]
+}
+
+const Card: React.FC<CardProps> = (props) => {
     
     const [activeType, setActiveType] = useState(0)
     const [size, setSize] = useState(0)
-    const dispatch = useDispatch()
-    const types = ["тонкое", "традиционное"]
     const cart = useSelector(selectCartContent)
 
 
@@ -31,7 +38,7 @@ const Card = (props) => {
             </div>
             <div className={styles.to_cart}>
                 <span className={styles.price}>{props.price[size]} ₽</span>
-                <ButtonAdd id={props.id} activeType={activeType} size={size} cart={cart}/>
+                <ButtonAddToCart id={props.id} activeType={activeType} size={size} cart={cart}/>
             </div>
         </div>
     )

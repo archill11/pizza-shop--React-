@@ -1,5 +1,5 @@
 import {Routes, Route} from "react-router-dom";
-
+import React from "react"
 import { Header } from './components/Header/Header';
 import { Catalog } from "./pages/Catalog";
 import { Cart } from "./pages/Cart";
@@ -10,19 +10,18 @@ import styles from './App.module.scss';
 
 
 
-function App() {
+const App: React.FC = () => {
 
-  
   return (
     <div className={styles.app_wrapper + ' clear'} >
       <Header />
-
+      
       <Routes>
         <Route path="/" element={ <Catalog /> }/>
 
-        <Route path="cart" element={ <Cart/> }/>
-        
         <Route path="item/:id" element={ <Item/> }/>
+        
+        <Route path="cart" element={ <Cart/> }/>
         
         <Route path="*" element={ <NotFound/> }/>
       </Routes>                

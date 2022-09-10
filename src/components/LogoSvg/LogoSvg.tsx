@@ -1,7 +1,8 @@
 import './LogoSvg.scss'
 
+type LogoSvgProps = {fill: string, className: string  }
 
-const LogoSvg = (props) => {
+const LogoSvg: React.FC<LogoSvgProps> = (props) => {
     const {className, fill} = props
 
     const fillSvg = fill 

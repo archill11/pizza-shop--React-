@@ -5,11 +5,20 @@ import { delItem, incItem, decItem } from "../../redux/cartSlice"
 
 import styles from './CartItem.module.scss'
 
+type CartItemProps = {
+    indx: number,
+    imageUrl: string,
+    title: string,
+    id: string,
+    size: number,
+    type: string,
+    count: number,
+    price: number,
+}
 
+const CartItem: React.FC<CartItemProps> = (props) => {
 
-const CartItem = (props) => {
     const dispatch = useDispatch()
-
     const remFromCart = () => {
         dispatch(delItem(props.indx))
     }
@@ -20,7 +29,6 @@ const CartItem = (props) => {
         dispatch(decItem(props.indx))
     }
 
-
    return(
         <div className={styles.item}>
             <div className={styles.img}>
@@ -28,7 +36,7 @@ const CartItem = (props) => {
             </div>
             <div className={styles.info}>
                 <span className={styles.title}>{props.title}</span>
-                <span className={styles.sub_title}>{props.type}, {props.size} {props.id > 15 ? "л" : "см."}</span>
+                <span className={styles.sub_title}>{props.type}, {props.size} {Number(props.id) > 15 ? "л" : "см."}</span>
             </div>
             <div className={styles.count}>
                 <span  onClick={incCartItem } className={styles.count_btn + " cp"}>+</span>

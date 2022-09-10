@@ -1,7 +1,7 @@
 import React from "react"
 import ContentLoader from "react-content-loader"
 
-const Sceleton = (props) => (
+const Sceleton: React.FC = () => (
     <ContentLoader 
     speed={2}
     width={330}
@@ -9,7 +9,6 @@ const Sceleton = (props) => (
     viewBox="0 0 330 530"
     backgroundColor="#f3f3f3"
     foregroundColor="#ffffff"
-    {...props}
   >
     <rect x="32" y="320" rx="9" ry="9" width="270" height="17" /> 
     <circle cx="161" cy="150" r="137" /> 

@@ -1,16 +1,15 @@
 import React, { useEffect, useRef, useState } from "react"
 import styled from 'styled-components'
-import axios from 'axios';
 import qs from "qs";
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { CardList } from "../components/CardList/CardList"
 import { Categories } from "../components/Categories/Categories"
 import { SortingSelect } from "../components/SortingSelect/SortingSelect"
 import { SearchInput } from "../components/SearchInput/SearchInput"
-import { setQueryParams } from "../redux/categorySlice";
-import { fethProducts, setProducts } from "../redux/productsSlice";
+import { filterSliceState, setQueryParams } from "../redux/categorySlice";
+import { fethProducts } from "../redux/productsSlice";
+import { AppDispatch, RootState } from "../redux/store";
 
 const SortingBlock = styled.div`
 display: grid;
@@ -20,12 +19,11 @@ height: 120px;
 padding: 30px;`
 
 
-
-const Catalog = (props) => {
+const Catalog: React.FC = () => {
   
   const [searchVal, searchByVal] = useState('')
-  const { categoryVal, sortingVal } = useSelector(state => state.filter)
-  const dispatch = useDispatch()
+  const { category, sortProperty } = useSelector((state: RootState) => state.filter)
+  const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
   const windowLocationSearch = useRef(false)
   const firstRender = useRef(true)
@@ -33,8 +31,8 @@ const Catalog = (props) => {
 
   const fetchData = () => {
    
-    const c = categoryVal === 0 ? '' : `category=${categoryVal}`
-    const s = sortingVal ? `&sortBy=${sortingVal}` : ''     
+    const c: string | '' = category === 0 ? '' : `category=${category}`
+    const s: string | '' = sortProperty ? `&sortBy=${sortProperty}` : ''     
     dispatch(fethProducts([c, s]))
  
     window.scrollTo(0, 0)
@@ -43,17 +41,18 @@ const Catalog = (props) => {
   useEffect(() => {
     if (!firstRender.current) {
       const queryString = qs.stringify({
-        sortProperty: sortingVal,
-        category: categoryVal,
+        sortProperty,
+        category,
       })
       navigate(`?${queryString}`)
     }
     firstRender.current = false
-  }, [categoryVal, sortingVal])
+  }, [category, sortProperty])
   
   useEffect(() => {
     if (window.location.search) {
-      const queryParams = qs.parse(window.location.search.substring(1))
+      const queryParams = (qs.parse(window.location.search.substring(1)) as unknown) as filterSliceState
+      console.log(queryParams);
       dispatch(setQueryParams(queryParams))
       windowLocationSearch.current = true
     }
@@ -64,16 +63,16 @@ const Catalog = (props) => {
       fetchData()
     }
     windowLocationSearch.current = false
-  }, [categoryVal, sortingVal])
+  }, [category, sortProperty])
 
 
 
   return (
     <>
       <SortingBlock>
-        <Categories categoryVal={categoryVal} />
+        <Categories categoryVal={category} />
         <SearchInput placeholder={'Поиск пиццы'} searchVal={searchVal} searchByVal={searchByVal}/>
-        <SortingSelect sortingVal={sortingVal}/>
+        <SortingSelect sortingVal={sortProperty}/>
       </SortingBlock>
       <CardList searchVal={searchVal} />
     </>
