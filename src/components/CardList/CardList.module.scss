@@ -3,11 +3,20 @@
 .card_list {
     background-color: $white-color;
     padding: 30px;
-    padding-bottom: 200px;
     display: grid;
-    grid-auto-flow:row;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow:row;
+    
     justify-content: space-between;
     justify-items: center;
     gap: 75px 30px;
+
+    @media (max-width: 1517px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 584px) {
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 100px;
+    }
+    
 }

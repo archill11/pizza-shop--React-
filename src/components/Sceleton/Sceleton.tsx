@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader"
 const Sceleton: React.FC = () => (
     <ContentLoader 
     speed={2}
-    width={330}
+    width={window.innerWidth < 821 ? 250 : 330}
     height={530}
     viewBox="0 0 330 530"
     backgroundColor="#f3f3f3"

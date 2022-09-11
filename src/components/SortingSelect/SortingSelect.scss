@@ -11,6 +11,17 @@
     gap: 5px;
     grid-auto-flow: column;
     align-items: center;
+    @media (max-width: 650px) {
+        width: 130px; 
+        gap: 1px; 
+        justify-content: end;
+    }
+    img {
+        height: 30px;
+        @media (max-width: 650px) {
+            height: 20px;  
+        }
+    }
 }
 
 #styledSelect1 {
@@ -34,6 +45,9 @@
         padding: 5px;
         font-size: 20px;
         color: $main-color;
+        @media (max-width: 650px) {
+            font-size: 15px;  
+        }
     }
 }
 
