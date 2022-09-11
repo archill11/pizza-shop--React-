@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import styled from 'styled-components'
 import qs from "qs";
+import debounce from 'lodash.debounce';
 import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom";
 import { CardList } from "../components/CardList/CardList"
@@ -17,7 +18,14 @@ display: grid;
 grid-auto-flow: column;
 justify-content: space-between;
 height: 120px;
-padding: 30px;`
+padding: 30px;
+@media (max-width: 650px) {
+  grid-auto-flow: row;
+  height: 184px;
+  padding: 15px;
+  gap: 5px;
+}
+`
 
 
 const Catalog: React.FC = () => {
@@ -34,21 +42,23 @@ const Catalog: React.FC = () => {
   const fetchData = () => {
   
     const l: string = String(limit)
-    const c: string | '' = category === 0 ? '' : `category=${category}`
+    const c: string | '' = category === 0 ? '' : `&category=${category}`
     const s: string | '' = sortProperty ? `&sortBy=${sortProperty}` : ''     
-    dispatch(fethProducts([l, c, s]))
- 
+    dispatch(fethProducts([l, s, c]))
+    
     // window.scrollTo(0, 0)
   }
 
-  
-  const scrollHandler = (event: Event)=> {
+
+  const scrollHandler =  debounce((event: Event)=> {
     const targetDiv: HTMLDocument = event.target as HTMLDocument
-    if (targetDiv.documentElement.scrollHeight - (targetDiv.documentElement.scrollTop + window.innerHeight) < 2 && limit < 20 ) {
+    if (targetDiv.documentElement.scrollHeight - (targetDiv.documentElement.scrollTop + window.innerHeight) < 5 && limit < 20 ) {
+      window.scrollTo(0,  targetDiv.documentElement.scrollHeight - 100)
       setLimit(limit => limit + 6 )
     }
-    
-  }
+  }, 400)
+  
+
 
   useEffect(() => {
     const win: Window = window; 

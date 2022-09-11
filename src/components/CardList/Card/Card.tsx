@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = (props) => {
         <div className={styles.wrapper}>
             <Link className={styles.link} to={`item/${props.id}`}>
                 <div className={styles.img}>
-                    <img src={props.imageUrl} height={300} alt="pizza"></img>
+                    <img src={props.imageUrl} alt="pizza"></img>
                 </div>
                 <span className={styles.title}>{props.title}</span>
             </Link>

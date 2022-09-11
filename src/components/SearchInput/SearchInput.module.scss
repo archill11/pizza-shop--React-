@@ -16,12 +16,16 @@
   color: $main-color;
   outline: none;
   transition: .5s;
+  
 }
 .box:hover {
   input {
     width: 350px;
     background: $white-color;
     border-radius: 10px;
+    @media (max-width: 650px) {
+      width: 200px;  
+    }
   }
   .close {
     opacity: 1;
@@ -37,6 +41,14 @@
     font-size: 26px;
     color: #ffd52d;
     transition: .2s;
+    @media (max-width: 650px) {
+      top: 50%;
+      left: 35%; 
+    }
+    @media (max-width: 450px) {
+      top: 50%;
+      left: 36%; 
+    }
     img {
       background-color: #fff;
     }
@@ -53,6 +65,9 @@
   top: 15px;
   right: 10px;
   opacity: 0;
+  @media (max-width: 650px) {
+    left: 157px;
+  }
 }
 
 

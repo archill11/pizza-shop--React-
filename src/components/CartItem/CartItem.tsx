@@ -47,7 +47,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
                 {props.price * props.count} ₽
             </div>
             <div onClick={ remFromCart } className={styles.delBtn + " cp"}>
-                <img src={deleteBtn} height={30} alt="pizza"></img>
+                <img src={deleteBtn} alt="pizza"></img>
             </div>
         </div>
    )

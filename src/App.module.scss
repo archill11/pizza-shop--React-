@@ -3,18 +3,16 @@
 .app_wrapper {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   display: grid;
-  grid-template-columns: 1450px;
+  
   gap: 15px;
   max-width: 1450px;
   min-width: 375px;
   margin: 0 auto;
   background-color: $white-color;
+
+  @media (min-width: 1517px) {
+    grid-template-columns: 1450px;  
+    
+  }
 }
 
-
-
-// @media (max-width: 525px) {
-//   .app_wrapper {
-//     grid-template-columns: 100vw;
-//   }
-// }
