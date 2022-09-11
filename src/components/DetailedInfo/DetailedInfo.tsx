@@ -46,7 +46,7 @@ const DetailedInfo: React.FC = () => {
     return(
         <>
             <div className={styles.info}>
-                <img src={item.imageUrl} height={300} alt="cart"></img>
+                <img src={item.imageUrl} alt="cart"></img>
                 <span className={styles.title}>{item.title}</span>
             </div>
             <div className={styles.order}>
