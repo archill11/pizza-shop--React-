@@ -20,8 +20,8 @@ const Login: React.FC<LoginProps> = (props) => {
   const location = useLocation()
   const { register, handleSubmit, formState: { errors, isValid} } = useForm({
     defaultValues: {
-      email: 'test3@mail.ru',
-      password: '1234',
+      email: '',
+      password: '',
     },
     mode: 'onchange'
   })
