@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAuth, selectIsAuth } from '../../redux/auth/slice';
 
-import './Login.scss'
+import styles from './Login.module.scss'
 
 
 type LoginProps = {
@@ -48,12 +48,12 @@ const Login: React.FC<LoginProps> = (props) => {
   
 
    return(
-        <div className="Login-wrapper ">
-            <div className="Login dg">
-                <form onSubmit={handleSubmit(submit)} className='form p15 dg g10' action="Login ">
-                    <div className="Login__header dg g-f-c">
-                        <div className="Login__title">sign in</div> 
-                        <button onClick={() =>props.setState('')} type='button'>X</button>
+        <div className={styles.wrapper}>
+            <div className={styles.Login}>
+                <form onSubmit={handleSubmit(submit)} className={styles.form} action="Login ">
+                    <div className={styles.header}>
+                      <div className={styles.title}>sign in</div> 
+                      <button className={styles.close} onClick={() =>props.setState('')} type='button'>X</button>
                     </div>
                     <input placeholder='E-mail' type="text" name="name" id="n1" 
                       error={Boolean(errors.email?.message)}
@@ -65,7 +65,7 @@ const Login: React.FC<LoginProps> = (props) => {
                       helperText={errors.password?.message}
                       {...register('password', {required: 'укажите пароль'})}
                     />
-                    <button type='submit'>sign in</button>
+                    <button className={styles.submit} type='submit'>sign in</button>
                 </form>
             </div>
         </div>

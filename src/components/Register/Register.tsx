@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAuth, fetchRegister, selectIsAuth } from '../../redux/auth/slice';
 
-import './Register.scss'
+import styles from './Register.module.scss'
 
 
 type RegisterProps = {
@@ -43,12 +43,12 @@ const Register: React.FC<RegisterProps> = (props) => {
   }
 
    return(
-    <div className="Register-wrapper ">
-      <div className="Register dg">
-        <form onSubmit={handleSubmit(submit)} className='form p15 dg g10' action="Register ">
-            <div className="Register__header dg g-f-c">
-              <div className="Register__title">sign up</div> 
-              <button onClick={() =>props.setState('')} type='button'>X</button>
+    <div className={styles.wrapper }>
+      <div className={styles.Register }>
+        <form onSubmit={handleSubmit(submit)} className={styles.form} action="Register ">
+            <div className={styles.header }>
+              <div className={styles.title}>sign up</div> 
+              <button className={styles.close} onClick={() =>props.setState('')} type='button'>X</button>
             </div>
             <input placeholder='Name' type="text" name="name" id="n1" 
               error={Boolean(errors.fullname?.message)}
@@ -65,7 +65,7 @@ const Register: React.FC<RegisterProps> = (props) => {
               helperText={errors.password?.message}
               {...register('password', {required: 'укажите пароль'})}
             />
-            <button type='submit'>sign up</button>
+            <button className={styles.submit} type='submit'>sign up</button>
         </form>
       </div>
     </div>

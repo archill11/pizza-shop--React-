@@ -1,0 +1,31 @@
+@import '../../libs/variables';
+
+.wrapper {
+  position: relative;
+  min-height: 800px;
+}
+.signIn {
+  margin: auto;
+  width: 30vw;
+  height: 250px;
+  display: grid;
+  justify-content: center ;
+  align-items: center;
+  grid-auto-flow: column;
+  gap: 25px;
+  border: 1px solid $gray-color;
+  border-radius: 25px;
+}
+
+.btn {
+  border-radius: 25px;
+  border: 1px solid $gray-color;
+  color: rgb(16, 56, 56);
+  width: 100px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 15px;
+  &:hover {
+    background: rgba(18, 94, 129, 0.2);
+  }
+}

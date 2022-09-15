@@ -1,0 +1,73 @@
+@import '../../libs/variables';
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+}
+
+.Register {
+  position: absolute;
+  display: grid;
+  top: 40%;
+  left: 40%;
+  background-color: $white-color;
+  border-radius: 15px;
+  width: 500px;
+  height: 300px;
+  input {
+    height: 50px;  
+  } 
+}
+
+.header {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.form {
+  display: grid;
+  padding: 15px;
+  gap: 10px;
+  input {
+    padding: 15px;
+    min-width: 55px;
+    border-radius: 5px;
+    border: 1px solid $main-color;
+    color: rgb(16, 56, 56);
+    font-weight: 600;
+    font-size: 15px;
+    &:hover {
+      background: rgba(18, 94, 129, 0.2);
+  }
+  }
+}
+
+.close {
+  justify-self: end;
+  min-width: 55px;
+  border-radius: 25px;
+  border: 1px solid $main-color;
+  color: rgb(16, 56, 56);
+  height: 40px;
+  font-weight: 600;
+  font-size: 15px;
+  &:hover {
+    background: rgba(18, 94, 129, 0.2);
+  }
+}
+
+.submit {
+  border-radius: 15px;
+  border: 1px solid $main-color;
+  color: rgb(16, 56, 56);
+  height: 40px;
+  font-weight: 600;
+  font-size: 15px;
+  &:hover {
+    background: rgba(18, 94, 129, 0.2);
+  }
+}
