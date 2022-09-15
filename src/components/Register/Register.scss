@@ -1,0 +1,22 @@
+.Register-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+}
+
+.Register {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  background-color: #fff;
+  width: 500px;
+  height: 300px;
+  input {
+      height: 50px;
+     
+  }
+  
+}

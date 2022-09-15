@@ -14,9 +14,9 @@ const SortingSelect: React.FC<SortingSelectProps> = (props) => {
         <label className="custom-select" htmlFor="styledSelect1">
             <img src={sort} alt="sort" />
             <select onChange={(e)=>dispatch(setSortingVal(e.target.value))} value={props.sortingVal} id="styledSelect1" name="options">
-                <option value="rating&order=desc">Популярные</option>
+                <option value="rating">Популярные</option>
                 <option value="price">Подешевле</option>
-                <option value="price&order=desc">Подороже</option>
+                <option value="priceDesc">Подороже</option>
             </select>
         </label>
     )
