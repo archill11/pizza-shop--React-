@@ -1,10 +1,9 @@
-import axios from "axios"
+import axios from "../../utils/axios"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { selectCartContent } from "../../redux/cart/selectors"
 import { ButtonAddToCart } from "../ButtonAddToCart/ButtonAddToCart"
-
 import { SizeSelector } from "../SizeSelector/SizeSelector"
 import { TypeSelector } from "../TypeSelector/TypeSelector"
 
@@ -17,8 +16,10 @@ export type toCartItem = {
     price: string
     compound: string
     id: string
+    _id: string
     types: number[]
     sizes: number[]
+    category: number
 }
 
 const DetailedInfo: React.FC = () => {
@@ -31,7 +32,7 @@ const DetailedInfo: React.FC = () => {
     useEffect(()=> {
         (async () =>  {
             try {
-                const {data} = await axios.get(`https://6316f07e82797be77feea866.mockapi.io/items/${id}`)
+                const {data} = await axios.get(`/products/${id}`)
                 setItem(data)
             } catch (error) {
                 alert('Ошибка запроса данных')
@@ -53,11 +54,11 @@ const DetailedInfo: React.FC = () => {
                     {item.compound && <span className={styles.compound}>Состав: {item.compound}</span>}
                 <div className={styles.selector}>
                     {item.types && <TypeSelector setActiveType={setActiveType} activeType={activeType} itemTipes={item.types}/>}
-                    <SizeSelector id={item.id} setSize={setSize} size={size} itemSizes={item.sizes}/>
+                    <SizeSelector id={item._id} setSize={setSize} category={item.category} size={size} itemSizes={item.sizes} />
                 </div>
                 <div className={styles.to_cart}>
                     <span className={styles.price}>{item.price[size]} ₽</span>
-                    <ButtonAddToCart id={item.id} item={item} activeType={activeType} size={size} 
+                    <ButtonAddToCart id={item._id} item={item} activeType={activeType} size={size} 
                     cart={cart }
                     
                     />

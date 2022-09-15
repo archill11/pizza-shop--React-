@@ -21,14 +21,12 @@ margin: 0 auto;
 }`
 
 
-
-
 const Cart: React.FC = () => {
    const cart = useSelector(selectCartContent)
    const totCount = cart.reduce((cum: number, curr: {count: number}) => curr.count + cum, 0)
 
    const cartList = cart.map((item: cartItem, indx: number) => (
-         <CartItem {...item} indx={indx} key={item.id + item.type + String(item.size)}/>
+         <CartItem {...item} indx={indx} key={item._id + item.type + String(item.size)}/>
       ))
 
    return(

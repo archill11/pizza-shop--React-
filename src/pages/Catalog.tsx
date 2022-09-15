@@ -42,8 +42,8 @@ const Catalog: React.FC = () => {
   const fetchData = () => {
   
     const l: string = String(limit)
-    const c: string | '' = category === 0 ? '' : `&category=${category}`
     const s: string | '' = sortProperty ? `&sortBy=${sortProperty}` : ''     
+    const c: string | '' = category === 0 ? '' : `&category=${category}`
     dispatch(fethProducts([l, s, c]))
     
     // window.scrollTo(0, 0)

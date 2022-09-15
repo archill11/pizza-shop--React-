@@ -4,6 +4,7 @@ export type Item = {
     price: number[],
     compound: string,
     id: string,
+    _id: string,
     types: number[],
     sizes: number[],
     category: number,
