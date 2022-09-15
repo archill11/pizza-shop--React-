@@ -18,8 +18,8 @@ const Register: React.FC<RegisterProps> = (props) => {
   const { register, handleSubmit, setError, formState: { errors, isValid} } = useForm({
     defaultValues: {
       fullname: '',
-      email: 'test@mail.ru',
-      password: '1234',
+      email: '',
+      password: '',
     },
     mode: 'onchange'
   })
