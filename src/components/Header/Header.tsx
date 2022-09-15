@@ -41,13 +41,12 @@ const Header: React.FC = (props: any) => {
         <div className={styles.buttons}>
           {isAuth ? (
               <>
-                
-                <button onClick={Logout}> Выйти </button>
+                <button className={styles.authButton} onClick={Logout}> Выйти </button>
               </>
             ) : (
               <>
                 <Link to='/auth'>
-                  <button  className='cp'>Войти</button>
+                  <button className={styles.authButton }>Войти</button>
                 </Link>
               </>
             )}

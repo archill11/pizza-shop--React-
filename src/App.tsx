@@ -8,7 +8,7 @@ import { NotFound } from "./pages/NotFound";
 import { Item } from "./pages/Item";
 
 import styles from './App.module.scss';
-import { Auth } from "./pages/Auth";
+import { Auth } from "./pages/Auth/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAuthMe, selectIsAuth } from "./redux/auth/slice";
 

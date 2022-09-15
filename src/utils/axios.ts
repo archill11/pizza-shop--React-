@@ -3,7 +3,7 @@ import axios from "axios";
 
 //задаем базовый URL для всех запросов
 const instance = axios.create({
-    baseURL: 'http://localhost:4444',
+    baseURL: process.env.REACT_APP_API_URL,
 })
 
 //делаем так что бы в headers Authorization передавался token из localStorage
