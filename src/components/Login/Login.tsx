@@ -43,7 +43,6 @@ const Login: React.FC<LoginProps> = (props) => {
     
     navigate(-1)
     return <Navigate to='/'/>
-    // return null
   }
   
 

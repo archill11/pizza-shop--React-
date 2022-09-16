@@ -14,6 +14,7 @@ type RegisterProps = {
 
 const Register: React.FC<RegisterProps> = (props) => {
   const dispatch = useDispatch()
+  const navigate = useNavigate();
   const isAuth = useSelector( selectIsAuth )
   const { register, handleSubmit, setError, formState: { errors, isValid} } = useForm({
     defaultValues: {
@@ -39,6 +40,7 @@ const Register: React.FC<RegisterProps> = (props) => {
   }
 
   if ( isAuth ) {
+    navigate(-1)
     return <Navigate to='/'/>
   }
 
