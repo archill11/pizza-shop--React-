@@ -55,14 +55,14 @@ const Register: React.FC<RegisterProps> = (props) => {
             <input placeholder='Name' type="text" name="name" id="n1" 
               error={Boolean(errors.fullname?.message)}
               helperText={errors.fullName?.message}
-              {...register('fullname', {required: 'укажите имя'})}
+              {...register('имя', {required: 'укажите имя'})}
             />
             <input placeholder='E-mail' type="text" name="name" id="n1" 
               error={Boolean(errors.email?.message)}
               helperText={errors.email?.message}
               {...register('email', {required: 'укажите почту'})}
             />
-            <input placeholder='password' type="text" name="name" id="n1" 
+            <input placeholder='пароль' type="text" name="name" id="n1" 
               error={Boolean(errors.password?.message)}
               helperText={errors.password?.message}
               {...register('password', {required: 'укажите пароль'})}

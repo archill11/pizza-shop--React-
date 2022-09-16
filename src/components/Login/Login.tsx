@@ -50,7 +50,7 @@ const Login: React.FC<LoginProps> = (props) => {
             <div className={styles.Login}>
                 <form onSubmit={handleSubmit(submit)} className={styles.form} action="Login ">
                     <div className={styles.header}>
-                      <div className={styles.title}>sign in</div> 
+                      <div className={styles.title}>войти</div> 
                       <button className={styles.close} onClick={() =>props.setState('')} type='button'>X</button>
                     </div>
                     <input placeholder='E-mail' type="text" name="name" id="n1" 
@@ -58,12 +58,12 @@ const Login: React.FC<LoginProps> = (props) => {
                       helperText={errors.email?.message}
                       {...register('email', {required: 'укажите почту'})}
                     />
-                    <input placeholder='password' type="text" name="name" id="n1" 
+                    <input placeholder='пароль' type="text" name="name" id="n1" 
                       error={Boolean(errors.password?.message)}
                       helperText={errors.password?.message}
                       {...register('password', {required: 'укажите пароль'})}
                     />
-                    <button className={styles.submit} type='submit'>sign in</button>
+                    <button className={styles.submit} type='submit'>войти</button>
                 </form>
             </div>
         </div>
