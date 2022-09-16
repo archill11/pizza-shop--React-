@@ -40,7 +40,6 @@ const Login: React.FC<LoginProps> = (props) => {
   }
 
   if ( isAuth ) {   
-    
     navigate(-1)
     return <Navigate to='/'/>
   }
