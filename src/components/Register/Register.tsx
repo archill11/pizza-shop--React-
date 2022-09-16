@@ -52,10 +52,10 @@ const Register: React.FC<RegisterProps> = (props) => {
               <div className={styles.title}>зарегистрироватья</div> 
               <button className={styles.close} onClick={() =>props.setState('')} type='button'>X</button>
             </div>
-            <input placeholder='Name' type="text" name="name" id="n1" 
+            <input placeholder='имя' type="text" name="name" id="n1" 
               error={Boolean(errors.fullname?.message)}
               helperText={errors.fullName?.message}
-              {...register('имя', {required: 'укажите имя'})}
+              {...register('fullname', {required: 'укажите имя'})}
             />
             <input placeholder='E-mail' type="text" name="name" id="n1" 
               error={Boolean(errors.email?.message)}
