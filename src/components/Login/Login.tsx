@@ -23,7 +23,7 @@ const Login: React.FC<LoginProps> = (props) => {
       email: '',
       password: '',
     },
-    mode: 'onchange'
+    mode: "onBlur"
   })
 
   const submit = async (args) => {
@@ -46,27 +46,31 @@ const Login: React.FC<LoginProps> = (props) => {
   
 
    return(
-        <div className={styles.wrapper}>
-            <div className={styles.Login}>
-                <form onSubmit={handleSubmit(submit)} className={styles.form} action="Login ">
-                    <div className={styles.header}>
-                      <div className={styles.title}>войти</div> 
-                      <button className={styles.close} onClick={() =>props.setState('')} type='button'>X</button>
-                    </div>
-                    <input placeholder='E-mail' type="text" name="name" id="n1" 
-                      error={Boolean(errors.email?.message)}
-                      helperText={errors.email?.message}
-                      {...register('email', {required: 'укажите почту'})}
-                    />
-                    <input placeholder='пароль' type="text" name="name" id="n1" 
-                      error={Boolean(errors.password?.message)}
-                      helperText={errors.password?.message}
-                      {...register('password', {required: 'укажите пароль'})}
-                    />
-                    <button className={styles.submit} type='submit'>войти</button>
-                </form>
+      <div className={styles.wrapper}>
+        <div className={styles.Login}>
+          <form onSubmit={handleSubmit(submit)} className={styles.form} action="Login ">
+            <div className={styles.header}>
+              <div className={styles.title}>войти</div> 
+              <button className={styles.close} onClick={() =>props.setState('')} type='button'>X</button>
             </div>
+            <input placeholder='E-mail' type="text" name="name" id="n1" 
+              error={Boolean(errors.email?.message)}
+              helperText={errors.email?.message}
+              {...register('email', {required: true})}
+            />
+            {errors?.email && <span>❗️укажите почту</span>}
+
+            <input placeholder='пароль' type="text" name="name" id="n1" 
+              error={Boolean(errors.password?.message)}
+              helperText={errors.password?.message}
+              {...register('password', {required: true})}
+            />
+            {errors?.password && <span>❗️укажите пароль минимум 4 символа</span>}
+
+            <button className={styles.submit} type='submit'>войти</button>
+          </form>
         </div>
+      </div>
    )
 }
 
