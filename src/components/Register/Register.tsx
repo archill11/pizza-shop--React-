@@ -49,7 +49,7 @@ const Register: React.FC<RegisterProps> = (props) => {
       <div className={styles.Register }>
         <form onSubmit={handleSubmit(submit)} className={styles.form} action="Register ">
             <div className={styles.header }>
-              <div className={styles.title}>sign up</div> 
+              <div className={styles.title}>зарегистрироватья</div> 
               <button className={styles.close} onClick={() =>props.setState('')} type='button'>X</button>
             </div>
             <input placeholder='Name' type="text" name="name" id="n1" 
@@ -67,7 +67,7 @@ const Register: React.FC<RegisterProps> = (props) => {
               helperText={errors.password?.message}
               {...register('password', {required: 'укажите пароль'})}
             />
-            <button className={styles.submit} type='submit'>sign up</button>
+            <button className={styles.submit} type='submit'>зарегистрироватья</button>
         </form>
       </div>
     </div>
