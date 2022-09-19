@@ -17,6 +17,9 @@ const Categories: React.FC<CategoriesProps> = (props) => {
   React.useEffect(()=> {
     dispatch(fethCategoryes())
   },[])
+  
+  console.log(allCategoryes);
+  
 
   return(
     <div className="categories cp">
