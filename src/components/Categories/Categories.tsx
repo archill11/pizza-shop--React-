@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import React from 'react'
 import { setCategoryVal } from "../../redux/category/slice";
 import { fethCategoryes } from "../../redux/category/asyncActions";
-
-import './Categories.scss'
 import { AppDispatch, RootState } from "../../redux/store";
 
+import './Categories.scss'
 
 type CategoriesProps = {categoryVal: number}
 
@@ -17,9 +16,6 @@ const Categories: React.FC<CategoriesProps> = (props) => {
   React.useEffect(()=> {
     dispatch(fethCategoryes())
   },[])
-  
-  console.log(allCategoryes);
-  
 
   return(
     <div className="categories cp">
