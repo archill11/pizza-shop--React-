@@ -67,7 +67,7 @@ describe("get products list slie", () => {
 
     expect(state).toEqual({
       items: [],
-      status: status.SUCCESS
+      status: status.ERROR
     })
   })
   
