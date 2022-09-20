@@ -26,7 +26,6 @@ const productsSlice = createSlice({
     builder.addCase(fethProducts.rejected, (state) => {
       state.status = status.ERROR
       state.items = []
-      alert('Ошибка при запросе данных')
     })
   }
 })
