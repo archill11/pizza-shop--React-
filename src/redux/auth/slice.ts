@@ -1,6 +1,7 @@
 //@ts-nocheck
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "../../utils/axios"
+import { authState } from "./types"
 
 
 export const fetchAuth = createAsyncThunk('auth/fetchAuth', async (args) => {
@@ -18,54 +19,56 @@ export const fetchAuthMe = createAsyncThunk('auth/fetchAuthMe', async () => {
     return data
 })
 
-const initialState = { data: null, status: 'loading' }
+
+const initialState: authState = { data: null, status: 'loading' }
 const authSlice = createSlice({
-    name: 'auth',
-    initialState,
-    reducers: {
-        logout(state) {
-            state.data = null
-        }
-    },
-    extraReducers: {
-        [fetchAuth.pending]: (state) => {
-            state.status = 'loading'
-            state.data = null
-        },
-        [fetchAuth.fulfilled]: (state, action) => {
-            state.data = action.payload
-            state.status = 'success'
-        },
-        [fetchAuth.rejected]: (state) => {
-            state.data = null
-            state.status = 'error'
-        },
-        
-        [fetchRegister.pending]: (state) => {
-            state.status = 'loading'
-            state.data = null
-        },
-        [fetchRegister.fulfilled]: (state, action) => {
-            state.data = action.payload
-            state.status = 'success'
-        },
-        [fetchRegister.rejected]: (state) => {
-            state.data = null
-            state.status = 'error'
-        },
-        [fetchAuthMe.pending]: (state) => {
-            state.status = 'loading'
-            state.data = null
-        },
-        [fetchAuthMe.fulfilled]: (state, action) => {
-            state.data = action.payload
-            state.status = 'success'
-        },
-        [fetchAuthMe.rejected]: (state) => {
-            state.data = null
-            state.status = 'error'
-        },
+  name: 'auth',
+  initialState: initialState,
+
+  reducers: {
+    logout(state) {
+      state.data = null
     }
+  },
+  extraReducers: {
+    [fetchAuth.pending]: (state) => {
+      state.status = 'loading'
+      state.data = null
+    },
+    [fetchAuth.fulfilled]: (state, action) => {
+      state.data = action.payload
+      state.status = 'success'
+    },
+    [fetchAuth.rejected]: (state) => {
+      state.data = null
+      state.status = 'error'
+    },
+    
+    [fetchRegister.pending]: (state) => {
+      state.status = 'loading'
+      state.data = null
+    },
+    [fetchRegister.fulfilled]: (state, action) => {
+      state.data = action.payload
+      state.status = 'success'
+    },
+    [fetchRegister.rejected]: (state) => {
+      state.data = null
+      state.status = 'error'
+    },
+    [fetchAuthMe.pending]: (state) => {
+      state.status = 'loading'
+      state.data = null
+    },
+    [fetchAuthMe.fulfilled]: (state, action) => {
+      state.data = action.payload
+      state.status = 'success'
+    },
+    [fetchAuthMe.rejected]: (state) => {
+      state.data = null
+      state.status = 'error'
+    },
+  }
 })
 
 export const selectIsAuth = state => Boolean(state.auth.data)
