@@ -21,6 +21,12 @@
   input {
     height: 50px;  
   } 
+
+  @media (max-width: 776px) {
+    width: 80vw;
+    top: 35%;
+    left: 10%;
+  }
 }
 
 .header {
@@ -42,7 +48,11 @@
     font-size: 15px;
     &:hover {
       background: rgba(18, 94, 129, 0.2);
+    }
   }
+
+  @media (max-width: 776px) {
+    width: 80vw;
   }
 }
 

@@ -6,6 +6,7 @@ import { Catalog } from "./pages/Catalog";
 import { Cart } from "./pages/Cart";
 import { NotFound } from "./pages/NotFound";
 import { Item } from "./pages/Item";
+import  {Payment} from "./pages/Payment/Payment";
 
 import styles from './App.module.scss';
 import { Auth } from "./pages/Auth/Auth";
@@ -31,6 +32,7 @@ const App: React.FC = () => {
         <Route path="item/:id" element={ <Item/> }/>
         
         <Route path="cart" element={ <Cart/> }/>
+        <Route path="pay" element={ <Payment/> }/>
         
         <Route path="auth" element={ <Auth/> }/>
         
