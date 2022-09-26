@@ -24,19 +24,13 @@ const CartFooter: React.FC<CartFooterProps> = (props) => {
   }
 
   const checkout = (args) => {
-    try {
-      dispatch(fethOrder(args))
-    } catch (err) {
-      console.log(errors);
-      alert( 'не удалось оформить заказ')
-      console.log(err);
-    }
+    navigate('/pay')
   }
 
    return(
     <div className={styles.wrapper}>
         <span>количество товаров: {props.totCount}</span>
-        <button onClick={() => checkout(cart)} className={styles.btn + " cp"}>Оформить заказ</button>
+        <button onClick={() => checkout()} className={styles.btn + " cp"}>Оформить заказ</button>
     </div>
  
    )
