@@ -5,8 +5,18 @@ import { filterSliceState } from "./types";
 
 
 
-
-const initialState: filterSliceState = { category: 0, sortProperty: 'rating', allCategoryes: [] }
+const initialState: filterSliceState = { 
+  category: 0, 
+  sortProperty: 'rating', 
+  allCategoryes: [
+    "Все",
+    "Мясные",
+    "Вегетарианские",
+    "Гриль",
+    "Острые",
+    "Закрытые",
+    "Напитки",
+  ] }
 
 const filterSlice = createSlice({
   name: "filter",
@@ -24,18 +34,18 @@ const filterSlice = createSlice({
       state.sortProperty = action.payload.sortProperty 
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(fethCategoryes.pending, (state) => {
-      state.allCategoryes = []
-    })
-    builder.addCase(fethCategoryes.fulfilled, (state, action) => {
-      state.allCategoryes = action.payload
-    })
-    builder.addCase(fethCategoryes.rejected, (state) => {
-      state.allCategoryes = []
-      alert('Ошибка при запросе данных')
-    })
-  }
+  // extraReducers: (builder) => {
+  //   builder.addCase(fethCategoryes.pending, (state) => {
+  //     state.allCategoryes = []
+  //   })
+  //   builder.addCase(fethCategoryes.fulfilled, (state, action) => {
+  //     state.allCategoryes = action.payload
+  //   })
+  //   builder.addCase(fethCategoryes.rejected, (state) => {
+  //     state.allCategoryes = []
+  //     alert('Ошибка при запросе данных')
+  //   })
+  // }
 })
 
 export const { setCategoryVal, setSortingVal, setQueryParams } = filterSlice.actions;

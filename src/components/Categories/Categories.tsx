@@ -6,15 +6,16 @@ import { AppDispatch, RootState } from "../../redux/store";
 
 import './Categories.scss'
 
+
 type CategoriesProps = {categoryVal: number}
 
 const Categories: React.FC<CategoriesProps> = (props) => {
   const dispatch = useDispatch<AppDispatch>()
   const { allCategoryes } = useSelector((state: RootState) => state.filter)
   
-  React.useEffect(()=> {
-    dispatch(fethCategoryes())
-  },[])
+  // React.useEffect(()=> {
+  //   dispatch(fethCategoryes())
+  // },[])
 
   return(
     <div className="categories cp">
